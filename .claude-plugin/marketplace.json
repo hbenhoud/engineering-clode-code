@@ -1,12 +1,18 @@
 {
   "name": "engineering-claude-code-plugin",
   "description": "Engineering orchestration plugin for Go teams — executes a Jira ticket end-to-end via Claude Code.",
+  "owner": {
+    "name": "hbenhoud"
+  },
   "plugins": [
     {
       "name": "engineering-claude-code-plugin",
       "description": "Executes a Jira ticket end-to-end — architecture, development, QA, security review, and delivery artifacts.",
       "version": "0.1.0",
-      "path": "."
+      "source": {
+        "type": "github",
+        "repo": "hbenhoud/engineering-clode-code"
+      }
     }
   ]
 }
