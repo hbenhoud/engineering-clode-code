@@ -10,10 +10,7 @@
       "name": "engineering-claude-code-plugin",
       "description": "Executes a Jira ticket end-to-end — architecture, development, QA, security review, and delivery artifacts.",
       "category": "development",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/hbenhoud/engineering-claude-code-plugin.git"
-      },
+      "source": ".",
       "homepage": "https://github.com/hbenhoud/engineering-claude-code-plugin"
     }
   ]

@@ -31,6 +31,7 @@ If SSH is not configured for GitHub, use HTTPS:
 
 ```
 /plugin install engineering-claude-code-plugin@engineering-claude-code-plugin
+/plugin install engineering-claude-code-plugin@engineering-claude-code-plugin
 ```
 
 > **Note for maintainers:** The `sha` field in `.claude-plugin/marketplace.json` must be updated to the latest commit hash on each release so users get the correct version.
