@@ -2,21 +2,7 @@
   "name": "engineering-claude-code-plugin",
   "version": "0.1.0",
   "description": "Engineering orchestration plugin for Go teams — executes a Jira ticket end-to-end via Claude Code.",
-  "author": "",
-  "license": "MIT",
-  "repository": "",
-  "claude_code": {
-    "min_version": "1.0.0"
-  },
-  "rules": [
-    "rules/go-guidelines.md"
-  ],
-  "agents": [
-    "agents/qa.md",
-    "agents/review.md",
-    "agents/secu.md"
-  ],
-  "skills": [
-    "skills/ticket/SKILL.md"
-  ]
+  "author": {
+    "name": "hbenhoud"
+  }
 }
