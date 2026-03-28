@@ -13,7 +13,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/hbenhoud/engineering-claude-code-plugin.git",
-        "sha": "4dcac2ca34324a19a8cb8b8e305034e31aa12f3a"
+        "sha": "ebda0509e941fffb1485816d3969ea629539fb03"
       },
       "homepage": "https://github.com/hbenhoud/engineering-claude-code-plugin"
     }
