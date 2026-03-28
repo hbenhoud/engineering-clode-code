@@ -18,7 +18,7 @@ You are the main pipeline orchestrator. Execute the phases below in order, adopt
    - Existing interfaces and types likely impacted
    - Patterns in use (error handling, logging, tracing)
    - Files directly relevant to the ticket spec
-3. Create `output/$ARGUMENTS/context.md` containing:
+3. Create `.claude/$ARGUMENTS/context.md` containing:
    - Ticket summary (objective, acceptance criteria, constraints)
    - List of relevant files and packages with their full paths
    - Codebase patterns to follow
@@ -29,7 +29,7 @@ You are the main pipeline orchestrator. Execute the phases below in order, adopt
 
 **Role: architect**
 
-Based on the ticket spec and `output/$ARGUMENTS/context.md`, produce `output/$ARGUMENTS/arch.md` containing:
+Based on the ticket spec and `.claude/$ARGUMENTS/context.md`, produce `.claude/$ARGUMENTS/arch.md` containing:
 
 - **Package breakdown**: which packages to create or modify, and why
 - **Go interfaces**: interfaces to create or modify, with full signatures
@@ -46,9 +46,9 @@ Do not invent anything not present in the spec. When in doubt, document as ambig
 
 **Role: senior Go developer**
 
-Based on `output/$ARGUMENTS/arch.md` and the rules loaded from `rules/go-guidelines.md`:
+Based on `.claude/$ARGUMENTS/arch.md` and the rules loaded from `rules/go-guidelines.md`:
 
-1. Implement directly in the project codebase (not in `output/`).
+1. Implement directly in the project codebase (not in `.claude/`).
 2. Strictly follow the coding guidelines:
    - **Errors**: sentinel errors with `var ErrXxx`, wrapping with `%w`, no log + return
    - **Logging**: `zap.L()` exclusively, static messages, typed fields
@@ -57,7 +57,7 @@ Based on `output/$ARGUMENTS/arch.md` and the rules loaded from `rules/go-guideli
    ```go
    // AMBIGUITY: <ambiguity description>
    ```
-4. If this is a correction cycle (report exists at `output/$ARGUMENTS/report.md`) → read the blocking findings and address them first.
+4. If this is a correction cycle (report exists at `.claude/$ARGUMENTS/report.md`) → read the blocking findings and address them first.
 
 ---
 
@@ -71,11 +71,11 @@ In a single response, emit three `Agent` tool calls simultaneously, each with `r
 
 | Agent | Task | Output |
 |-------|------|--------|
-| `agent-qa` | Write table-driven unit tests, run `go test`, cover all acceptance criteria | `output/$ARGUMENTS/qa.md` |
-| `agent-review` | Review code quality, check guideline compliance, run `golangci-lint` | `output/$ARGUMENTS/review.md` |
-| `agent-secu` | Audit for injection, data exposure, attack surface, run `gosec` | `output/$ARGUMENTS/secu.md` |
+| `agent-qa` | Write table-driven unit tests, run `go test`, cover all acceptance criteria | `.claude/$ARGUMENTS/qa.md` |
+| `agent-review` | Review code quality, check guideline compliance, run `golangci-lint` | `.claude/$ARGUMENTS/review.md` |
+| `agent-secu` | Audit for injection, data exposure, attack surface, run `gosec` | `.claude/$ARGUMENTS/secu.md` |
 
-Each agent receives the ticket ID (`$ARGUMENTS`) as context so it can locate `output/$ARGUMENTS/context.md` and the implemented files.
+Each agent receives the ticket ID (`$ARGUMENTS`) as context so it can locate `.claude/$ARGUMENTS/context.md` and the implemented files.
 
 After emitting all three calls in one message, wait for all three background agents to complete before proceeding to Phase 5.
 
@@ -85,8 +85,8 @@ After emitting all three calls in one message, wait for all three background age
 
 **Role: tech lead**
 
-1. Read `output/$ARGUMENTS/qa.md`, `output/$ARGUMENTS/review.md`, `output/$ARGUMENTS/secu.md`.
-2. Produce `output/$ARGUMENTS/report.md` with the following structure:
+1. Read `.claude/$ARGUMENTS/qa.md`, `.claude/$ARGUMENTS/review.md`, `.claude/$ARGUMENTS/secu.md`.
+2. Produce `.claude/$ARGUMENTS/report.md` with the following structure:
 
 ```markdown
 # Report — $ARGUMENTS
@@ -128,7 +128,7 @@ After emitting all three calls in one message, wait for all three background age
 
 Only if the user explicitly confirms to continue.
 
-1. Produce `output/$ARGUMENTS/doc.md`:
+1. Produce `.claude/$ARGUMENTS/doc.md`:
    - Based on the original spec (from `context.md`) and what was actually implemented
    - Do not document behavior that was not implemented
    - Include: purpose of the change, modified packages, public interfaces, usage examples where relevant
@@ -150,7 +150,7 @@ pkg/
 ...
 
 # Working artifacts
-output/$ARGUMENTS/
+.claude/$ARGUMENTS/
 ├── context.md
 ├── arch.md
 ├── report.md

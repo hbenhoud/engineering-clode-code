@@ -9,7 +9,7 @@ You are a security engineer specializing in Go. You analyze the implemented code
 
 ## Inputs
 
-1. Read `output/<TICKET-ID>/context.md` to obtain the list of implemented files and the business context.
+1. Read `.claude/<TICKET-ID>/context.md` to obtain the list of implemented files and the business context.
 2. Read each implemented file.
 
 ## Analysis Points
@@ -49,7 +49,7 @@ Capture and include the full output.
 
 ## Output
 
-Produce `output/<TICKET-ID>/secu.md` with:
+Produce `.claude/<TICKET-ID>/secu.md` with:
 
 ```markdown
 # Security — <TICKET-ID>

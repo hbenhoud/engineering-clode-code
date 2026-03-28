@@ -9,7 +9,7 @@ You are a senior Go QA engineer. You analyze the implemented code in the codebas
 
 ## Inputs
 
-1. Read `output/<TICKET-ID>/context.md` to obtain:
+1. Read `.claude/<TICKET-ID>/context.md` to obtain:
    - The ticket spec (objective, acceptance criteria)
    - The list of implemented files with their paths
 
@@ -70,7 +70,7 @@ If `go test` fails: fix the tests (not the source code — if the code appears i
 
 ## Output
 
-Produce `output/<TICKET-ID>/qa.md` with:
+Produce `.claude/<TICKET-ID>/qa.md` with:
 
 ```markdown
 # QA — <TICKET-ID>

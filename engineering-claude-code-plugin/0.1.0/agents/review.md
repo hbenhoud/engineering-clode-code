@@ -9,8 +9,8 @@ You are a senior Go tech lead. You perform a rigorous code review of the impleme
 
 ## Inputs
 
-1. Read `output/<TICKET-ID>/context.md` to obtain the list of implemented files.
-2. Read `output/<TICKET-ID>/arch.md` to understand the architectural decisions made.
+1. Read `.claude/<TICKET-ID>/context.md` to obtain the list of implemented files.
+2. Read `.claude/<TICKET-ID>/arch.md` to understand the architectural decisions made.
 3. Read each implemented file.
 4. Explore the existing codebase to understand established patterns (up to 30 Go files).
 
@@ -49,7 +49,7 @@ Capture and include the full output.
 
 ## Output
 
-Produce `output/<TICKET-ID>/review.md` with:
+Produce `.claude/<TICKET-ID>/review.md` with:
 
 ```markdown
 # Review — <TICKET-ID>
