@@ -31,10 +31,39 @@ If SSH is not configured for GitHub, use HTTPS:
 
 ```
 /plugin install engineering-claude-code-plugin@engineering-claude-code-plugin
-/plugin install engineering-claude-code-plugin@engineering-claude-code-plugin
 ```
 
-> **Note for maintainers:** The `sha` field in `.claude-plugin/marketplace.json` must be updated to the latest commit hash on each release so users get the correct version.
+### Releasing a new version (maintainers)
+
+Claude Code uses the `sha` field in `.claude-plugin/marketplace.json` to know which exact commit to fetch. It must be updated on every release, otherwise users continue to get the old version.
+
+After every push to `main`:
+
+1. Get the latest commit SHA:
+   ```bash
+   git rev-parse HEAD
+   ```
+
+2. Update `.claude-plugin/marketplace.json`:
+   ```json
+   {
+     "plugins": [
+       {
+         "name": "engineering-claude-code-plugin",
+         "source": ".",
+         "sha": "<paste new sha here>",
+         ...
+       }
+     ]
+   }
+   ```
+
+3. Commit and push:
+   ```bash
+   git add .claude-plugin/marketplace.json
+   git commit -m "release: bump sha to <short-sha>"
+   git push
+   ```
 
 ### Locally (for development)
 

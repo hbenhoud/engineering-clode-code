@@ -11,6 +11,7 @@
       "description": "Executes a Jira ticket end-to-end — architecture, development, QA, security review, and delivery artifacts.",
       "category": "development",
       "source": ".",
+      "sha": "4dcac2ca34324a19a8cb8b8e305034e31aa12f3a",
       "homepage": "https://github.com/hbenhoud/engineering-claude-code-plugin"
     }
   ]
