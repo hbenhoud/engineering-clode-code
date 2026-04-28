@@ -4,6 +4,5 @@
   "description": "Engineering orchestration plugin for Go teams — executes a Jira ticket end-to-end via Claude Code.",
   "author": {
     "name": "hbenhoud"
-  },
-  "skills": ["skills/ticket"]
+  }
 }
