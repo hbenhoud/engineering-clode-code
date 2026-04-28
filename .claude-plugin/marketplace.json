@@ -14,7 +14,7 @@
         "source": "git-subdir",
         "url": "https://github.com/hbenhoud/engineering-claude-code-plugin.git",
         "path": "engineering-claude-code-plugin/0.1.0",
-        "sha": "973216a430aa2d0b4d6b56dd11696bf731de3f61"
+        "sha": "286c78d3b1962d1218dd5dd2817997a5d6497287"
       },
       "homepage": "https://github.com/hbenhoud/engineering-claude-code-plugin"
     }
